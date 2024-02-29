@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+
+/* Set height of body and the document to 100% */
+body, html {
+  height: 140%;
+  margin: 0;
+  font-family: Arial;
+}
+
+/* Style tab links */
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+}
+
+#Home {background-color: red;}
+#Gallery {background-color:rgb(200, 170, 170);}
+#Menu {background-color: blue;}
+
+</style>
+</head>
+<body>
+
+<button class="tablink" onclick="openPage('Home', this, 'red')">Home</button>
+<button class="tablink" onclick="openPage('Gallery', this, 'green')" id="defaultOpen">Gallery</button>
+<button class="tablink" onclick="openPage('Menu', this, 'blue')">Menu</button>
+
+<div id="Home" class="tabcontent">
+  <h3>Home</h3>
+  <p>Home is  technology...</p>
+  <img title="Tech pic" src="https://burst.shopifycdn.com/photos/working-at-night.jpg?width=373&format=pjpg&exif=0&iptc=0" width="960" height="480" >
+</div>
+
+<div id="Gallery" class="tabcontent">
+  <h3>Gallery</h3>
+  <p>Enjoy nature</p> 
+  <div class="row">
+    <div class="column">
+      <img src="https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072823_640.jpg"alt="nature" width="1280" height="640">
+      <img src="https://cdn.pixabay.com/photo/2014/04/14/20/11/pink-324175_640.jpg" width="1280" height="640">
+      <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" width="1280" height="640">
+      <img src="https://cdn.pixabay.com/photo/2014/02/27/16/10/flowers-276014_640.jpg" width="1280" height="640">
+    </div>
+  </div>
+</div>
+
+<div id="Menu" class="tabcontent">
+  <h3>Menu</h3>
+  <p>Get in touch, or swing by for a cup of coffee.</p>
+  <div class="container">
+    <img src="https://images.pexels.com/photos/1583884/pexels-photo-1583884.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Chips" width="720" height="480">
+    <div class="bottom-left">Chips</div>
+    <div class="container">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-UfdSim35tBDkgX1DvWMqx66fB946EuPKaNI_I_Mzjg&s" alt="Chicken noodles" width="720" height="480">
+        <div class="bottom-left">Chicken noodles</div>
+   </div> 
+  </div>
+</div>
+
+<script>
+function openPage(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
+</body>
+</html> 
